@@ -1,4 +1,4 @@
-let = {
+let obj = {
   name: "Иван Петров",
   age: 38,
   show: function () {

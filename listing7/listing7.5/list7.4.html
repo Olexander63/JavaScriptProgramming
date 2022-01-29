@@ -1,0 +1,37 @@
+﻿<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>listing 7.5</title>
+    <script>
+        function openWindow() {
+            if (window.mywindow && !mywindow.close) {
+                window.alert("Документ уже открыт")
+            } else {
+                window.mywindow = window.open("myhello.html")
+            }
+        }
+
+        function closeWindow() {
+            if (window.mywindow && !mywindow.close()) {
+                mywindow.close()
+                window.mywindow = null
+            } else {
+                window.alert("Окно уже закрыто")
+            }
+        }
+    </script>
+</head>
+<body>
+
+<h3>listing 7.5</h3>
+<br>
+<hr>
+<b>Открытие и закрытие окна</b><br>
+<a href="javascript:openWindow()">Открыть файл myhello.html</a><br>
+<a href="javascript:closeWindow()">Закрыть окно с файлом myhello.html</a>
+</body>
+
+</html>

@@ -1,0 +1,32 @@
+﻿<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>listing 7.8</title>
+    <script>
+        function showParameters() {
+            let txt = "Внутренние ширина и высота: " + window.innerWidth
+            txt += " и " + window.innerHeight + "<br>"
+            txt += "Внешние ширина и выста: " + window.outerWidth
+            txt += "и" + window.outerHeight + "<br>"
+            mytext.innerHTML = txt
+        }
+    </script>
+</head>
+<body onload="showParameters()" onresize="showParameters()">
+
+<h3>listing 7.8</h3>
+<br>
+<hr>
+<b>Размеры окна</b><br>
+
+<p id="mytext"></p>
+
+<button onclick="alert('Координаты: '+window.screenX + 'И' +window.screenY)"> Показать координаты окна</button>
+
+</body>
+
+</html>

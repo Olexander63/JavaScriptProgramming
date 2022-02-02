@@ -1,0 +1,40 @@
+﻿<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>listing 7.9</title>
+
+</head>
+<body >
+
+<h3>listing 7.9</h3>
+<br>
+<hr>
+
+<p id="mydata" style="font-family: arial,serif;font-size: 25pt;color: black;">
+    <b>Клавиша не нажата: черный текст на белом фоне</b>
+</p>
+<hr>
+<b>Обратите внимание на цвет фона и текст, представленный выше.</b>
+
+<script>
+    window.onkeydown=function () {
+        document.body.style.backgroundColor="yellow"
+        let mydata = document.getElementById("mydata")
+        mydata.style.color ="blue"
+        mydata.innerHTML = "<b>Нажата клавиша: синий текс на жельом фоне</b>"
+    }
+    window.onkeyup  =function () {
+        document.body.style.backgroundColor="white"
+        let mydata = document.getElementById("mydata")
+        mydata.style.color="black"
+        mydata.innerHTML="<b>Клавиша не нажата: черный текст на белом фоне</b>"
+    }
+</script>
+
+</body>
+
+</html>

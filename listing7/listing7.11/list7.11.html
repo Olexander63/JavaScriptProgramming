@@ -1,0 +1,66 @@
+﻿<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>listing 7.11</title>
+
+    <script>
+        let myrand = Math.floor(10 * Math.random()) + 1
+        let si
+        let mytime, myfield, mybtn, output
+
+        function setNewTime() {
+            let num = parseInt(mytime.innerHTML) - 1
+            mytime.innerHTML = num
+            if (num === 0) {
+                mybtn.disable = true
+                clearInterval(si)
+            }
+        }
+
+        function pressMe() {
+            let num = parseInt(myfield.value)
+            output.innerHTML += " Вы ввели число " + num
+            if (num !== myrand) {
+                output.innerHTML += " - это<b> не правильно</b><br>"
+            } else {
+                output.innerHTML += " - это<b> правильно</b><br>"
+                mybtn.disable = true
+                clearInterval(si)
+            }
+        }
+
+        window.onload = function () {
+            mytime = document.getElementById("mytime")
+            myfield = document.getElementById("myfield")
+            mybtn = document.getElementById("mybtn")
+            output = document.getElementById("output")
+
+            mybtn.disable = false
+            si = setInterval(setNewTime, 1000)
+        }
+    </script>
+</head>
+<body>
+
+<h3>listing 7.11</h3>
+<br>
+
+
+<b>Угадай число(от 1 до 10).</b><br>
+
+У вас осталось <b id="mytime">20</b>секунд.<br>
+<hr>
+
+<input id="myfield" type="text" size="10px">
+<input id="mybtn" type="button" value="Угадать" onclick="pressMe()">
+<hr>
+
+<p id="output"></p>
+
+</body>
+
+</html>

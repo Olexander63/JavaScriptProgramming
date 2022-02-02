@@ -1,0 +1,44 @@
+﻿<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>listing 7.10</title>
+    <style>
+        #myblock {
+            font: bold 25pt sans;
+            color: blue;
+            width: 160px;
+            height: 40px;
+            background: yellow;
+            border: solid 3px red;
+            border-radius: 20px;
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            text-align: center;
+        }
+    </style>
+
+    <script>
+        function setMyTime() {
+            let time = new Date()
+            document.getElementById("myblock").innerHTML = time.toLocaleTimeString()
+        }
+    </script>
+</head>
+<body onload="setInterval(setMyTime,1000)">
+
+<h3>listing 7.10</h3>
+<br>
+<hr>
+
+<p>Данный документ содержит сценарий, в котором используеться метод <code>setInterval()</code>.</p>
+
+
+<div id="myblock"></div>
+</body>
+
+</html>

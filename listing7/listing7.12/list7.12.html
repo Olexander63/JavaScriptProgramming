@@ -1,0 +1,47 @@
+﻿<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>listing 7.12</title>
+<script>
+    let st
+    
+    let myblock
+    window.onload =function () {
+        myblock =document.getElementById("myblock")
+        
+        let num = 5
+        
+        let txt ="Через" +num+ "секунд после загрузки отображается сообщение"
+        txt+="<button onclick='makeclick()'>Отменить</button>"
+        st = setTimeout(show,num*100,"Использован метод setTimeout()")
+        myblock.innerHTML =txt
+    }
+    
+    function show(str) {
+        alert(str)
+        myblock.innerHTML="Сообщение не было показано"
+    }
+    
+    function makeclick(){
+        clearTimeout(st)
+        myblock.innerHTML = "Сообщение отображаться не будет"
+    }
+</script>
+</head>
+<body>
+
+<h3>listing 7.12</h3>
+<br>
+<hr>
+
+Используем методы <code>setTimeout()</code> и <code> clearTimeout()</code>.<br>
+
+<p id="myblock"></p>
+<hr>
+</body>
+
+</html>

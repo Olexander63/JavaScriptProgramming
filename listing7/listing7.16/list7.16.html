@@ -1,0 +1,111 @@
+﻿<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>listing 7.16</title>
+    <script>
+        function create() {
+            let wnd
+
+            wnd = window.open()
+
+            wnd.document.open()
+
+            wnd.document.writeln("<!DOCTYPE HTML>")
+
+            wnd.document.writeln("< html>")
+
+            wnd.document.writeln("< head> <title></title></head>")
+
+            wnd.document.writeln("<body>")
+
+            wnd.document.writeln("<h3>Новый документ</h3>")
+
+            wnd.document.writeln("<p>Этот документ создан с помоцью сценария.</p>")
+            wnd.document.writeln("<p>Этот блок записан с помощью метода <code>writeln()</code>.</p>")
+
+            let element = wnd.document.createElement("p")
+
+            element.innerHTML = "Этот блок создан с помощью метода <code>creteElement()</code>"
+
+            let plist = wnd.document.getElementsByTagName("p")
+
+            wnd.document.body.insertBefore(element, plist[plist.length - 1])
+
+            let slit = document.getElementsByTagName("script")
+
+            wnd.document.writeln("<p>В исходном документе последний сценарий содержит команду:</p>")
+
+            wnd.document.writeln("<code>" + slist[slist.length - 1].innerHTML + "</code>")
+
+            wnd.document.writeln("</body>")
+
+            wnd.document.writeln("</html>")
+
+            wnd.document.close()
+
+            let txt = document.getElementById("myfield").value
+
+            if (txt === "") {
+                txt = "Документ без названия"
+            }
+
+            wnd.document.title = txt
+        }
+    </script>
+</head>
+<body>
+
+
+<h3>listing 7.16</h3>
+<br>
+<hr>
+
+<h3> Программное создание документа</h3>
+
+<p> Для создани нового документа следует щелкнуть кнопку. Название документа вводится в текстовое поле. По умолчанию
+    (если поле пустое) используться <b>Документ без имени</b></p>
+
+<input id="myfield" type="text" size="50">
+
+<input type="button" value="Создать новый документ " onclick="create()">
+
+
+<hr>
+
+<h3>Некоторые свойства документа</h3>
+
+<p>
+    В документе использована кодировка <b>
+    <script>
+        document.write(document.characterSet)
+    </script>
+</b>
+</p>
+
+<p>Размещение документа <b>
+
+    <script>
+        document.write(document.URL)
+    </script>
+</b>
+</p>
+
+<p>Состояние документа <b>
+    <script>
+        document.write(document.readyState)
+    </script>
+</b></p>
+<hr>
+
+<script>document.write("Выполнен последний сценарий.")</script>
+<br>
+
+Документ загружен. Это последняя строка в документе
+
+</body>
+
+</html>

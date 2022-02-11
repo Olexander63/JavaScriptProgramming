@@ -1,0 +1,93 @@
+﻿<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible"
+          content="IE=edge">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+    <title>listing 8.8</title>
+    
+    <script>
+        var colors = new Array(5)
+        var selected
+        for (var k=0;k<colors.length;k++){
+            colors[k]="rgb(0,"+(215+k*10)+",0)"
+        }
+        
+        function setColor() {
+            var ref = document.getElementById("mydiv")
+            ref.style.background=colors[selected]
+            ref.innerHTML=colors[selected]
+        }
+        
+        function next() {
+            selected=(selected+1)%colors.length
+            setColor()
+        }
+        function prev() {
+            if(selected>0){
+                selected--
+            }else {
+                selected=colors.length-1
+            }
+            setColor()
+        }
+        
+        function handler(evt){
+            var nxt,prv
+            nxt =document.getElementById("next")
+            prv=document.getElementById("prev")
+            if(evt.type==="load"){
+                selected =0
+                setColor()
+                nxt.onclick=handler
+                prv.onclick=handler
+                return
+            }
+            if(evt.type === "click"){
+                if(evt.target ===nxt){
+                   next()
+                    return;
+                }
+                if(evt.target===prv){
+                    prev()
+                }
+            }
+        }
+        window.onload = handler
+    </script>
+    
+    <style>
+        button{
+            width: 180px;
+            height: 30px;
+            font-size: 13pt;
+            font-family: "Courier New",serif;
+            font-weight: bold;
+        }
+        div{
+            width: 360px;
+            height: 100px;
+            border-style: ridge;
+            font-size: 20pt;
+            font-weight: bold;
+            text-align: center;
+            line-height: 100px;
+        }
+    </style>
+</head>
+<body>
+
+
+<h3>listing 8.8</h3>
+<br>
+<hr>
+
+<div id="mydiv"></div>
+<button id="prev"><< Предыдущий</button>
+<button id="next"> Следующий>></button>
+</body>
+
+</html>
